@@ -8702,8 +8702,8 @@ Tilemap:
     m_Data: {fileID: 3299055835287933305, guid: 7172f5cb0f4afb948aec68b2847b37df, type: 3}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -14, y: -18, z: 0}
-  m_Size: {x: 28, y: 31, z: 1}
+  m_Origin: {x: -21, y: -17, z: 0}
+  m_Size: {x: 42, y: 31, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -38,12 +36,11 @@ public class GameManager : MonoBehaviour
         }
 
         ResetState();
-       
     }
 
     private void ResetState()
     {
-         ResetGhostMultiplier();
+        ResetGhostMultiplier();
 
          for (int i = 0; i < this.ghosts.Length; i++){
             this.ghosts[i].gameObject.SetActive(true);
@@ -69,7 +66,7 @@ public class GameManager : MonoBehaviour
         this.score = score;
     }
 
-    private void SetLives(int lives )
+    private void SetLives(int lives)
     {
         this.lives = lives;
     }
@@ -105,7 +102,7 @@ public class GameManager : MonoBehaviour
 
         if (!HasRemainingPellets())
         {
-            this.pacman.gameObject.SetActive(false);
+            //this.pacman.gameObject.SetActive(false);
             Invoke(nameof(NewRound), 3.0f);
         }
     }
@@ -115,8 +112,7 @@ public class GameManager : MonoBehaviour
          //TODO: Changing ghost state
         PelletEaten(pellet);
         CancelInvoke();
-        Invoke(nameof (ResetGhostMultiplier), pellet.duration);
-        
+        Invoke(nameof(ResetGhostMultiplier), pellet.duration);
          
     }
 
