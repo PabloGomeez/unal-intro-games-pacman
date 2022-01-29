@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.972549
       objectReference: {fileID: 0}
+    - target: {fileID: 3808298230516919219, guid: 32dee148b47fd6f4b88f3306fbf796b1, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 1621977955548418655}
     - target: {fileID: 4318889102035916511, guid: 32dee148b47fd6f4b88f3306fbf796b1, type: 3}
       propertyPath: m_Name
       value: Ghost_Clyde
@@ -77,3 +81,14 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7391304e6dcdc594484288107bfd217f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32dee148b47fd6f4b88f3306fbf796b1, type: 3}
+--- !u!114 &1621977955548418655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2927766108142292445, guid: 32dee148b47fd6f4b88f3306fbf796b1, type: 3}
+  m_PrefabInstance: {fileID: 4477685890864750466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe373273f57bd2744bec2a6dfbb75d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
