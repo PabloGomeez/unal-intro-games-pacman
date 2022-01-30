@@ -102,14 +102,17 @@ public class GameManager : MonoBehaviour
 
         if (!HasRemainingPellets())
         {
-            //this.pacman.gameObject.SetActive(false);
+            // this.pacman.gameObject.SetActive(false);
             Invoke(nameof(NewRound), 3.0f);
         }
     }
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
-         //TODO: Changing ghost state
+        for (int i = 0; i < this.ghosts.Length; i++) {
+            this.ghosts[i].frightened.Enable(pellet.duration);
+        }
+
         PelletEaten(pellet);
         CancelInvoke();
         Invoke(nameof(ResetGhostMultiplier), pellet.duration);
