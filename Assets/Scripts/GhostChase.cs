@@ -6,7 +6,7 @@ public class GhostChase : GhostBehavior
     {
         this.ghost.scatter.Enable();
     }
-
+ 
     private void OnTriggerEnter2D(Collider2D other) 
     {
         Node node = other.GetComponent<Node>();
