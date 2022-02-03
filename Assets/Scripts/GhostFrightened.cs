@@ -18,7 +18,7 @@ public class GhostFrightened : GhostBehavior
         this.blue.enabled = true;
         this.white.enabled = false;
 
-        Invoke(nameof(Flash), duration / 2.0f);
+        Invoke(nameof(Flash), duration / 2f);
     }
 
     public override void Disable()
@@ -91,7 +91,7 @@ public class GhostFrightened : GhostBehavior
                 Vector3 newPosition = this.transform.position + new Vector3(availableDirection.x, availableDirection.y, 0.0f);
                 float distance = (this.ghost.target.position - newPosition).sqrMagnitude;
 
-                if(distance < maxDistance)
+                if(distance > maxDistance)
                 {
                     direction = availableDirection;
                     maxDistance = distance;
