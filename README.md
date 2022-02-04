@@ -10,5 +10,4 @@ Los estudiantes que integraron el equipo de desarrollo del proyecto son:
   * Alejandro Jiménez Zapata (aljimenezza@unal.edu.co)
   * Tania Elizabeth Mejía Chaves (temejiac@unal.edu.co)
 
-
-    ![Gameplay](./Pacman gameplay.gif "Gameplay")
+    ![Gameplay](https://github.com/PabloGomeez/unal-intro-games-pacman/blob/main/Pacman%20gameplay.gif)
