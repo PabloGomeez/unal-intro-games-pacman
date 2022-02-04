@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
+    public int counthighscore = 0;
+    public int highscore { get; private set; }
     public int lives { get; private set; }
 
     private void Start() 
@@ -65,6 +67,18 @@ public class GameManager : MonoBehaviour
     {
         this.score = score;
         Events.OnScoreUpdatedEvent?.Invoke(score);
+
+        if(this.score > this.counthighscore)
+        {
+            this.counthighscore = this.score;
+            SetHighScore(this.counthighscore);
+        }
+    }
+
+    private void SetHighScore(int highscore)
+    {
+        this.highscore = highscore;
+        Events.OnHighScoreUpdatedEvent?.Invoke(highscore);
     }
 
     private void SetLives(int lives)

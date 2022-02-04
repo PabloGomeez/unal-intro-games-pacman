@@ -15,17 +15,24 @@ public class UIScore : MonoBehaviour
         _HighScoreText = transform.Find("HighScoreText").GetComponent<TextMeshProUGUI>();
 
         Events.OnScoreUpdatedEvent += OnScoreUpdated;
+        Events.OnHighScoreUpdatedEvent += OnHighScoreUpdated;
         
     }
 
     private void OnDestroy()
     {
         Events.OnScoreUpdatedEvent -= OnScoreUpdated;
+        Events.OnHighScoreUpdatedEvent -= OnHighScoreUpdated;
     }
     
     public void OnScoreUpdated(int score)
     {
         _ScoreText.text = string.Format(SCORE_TEXT_TEMPLATE, score);
+    }
+
+    public void OnHighScoreUpdated(int highscore)
+    {
+        _HighScoreText.text = string.Format(HIGH_SCORE_TEXT_TEMPLATE, highscore);
     }
 
 }
