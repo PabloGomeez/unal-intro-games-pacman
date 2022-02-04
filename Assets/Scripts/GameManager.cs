@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     private void SetScore(int score)
     {
         this.score = score;
+        Events.OnScoreUpdatedEvent?.Invoke(score);
     }
 
     private void SetLives(int lives)
