@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TwoLives : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private CanvasGroup _canvasGroup;
+    
     void Start()
     {
-        
+        _canvasGroup = GetComponent<CanvasGroup>();
+        _canvasGroup.alpha = 1;
+
+        Events.OnTwoLivesLostEvent += OnTwoLivesLost;
+        Events.OnNewGameEvent += OnNewGame;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        Events.OnTwoLivesLostEvent -= OnTwoLivesLost;
+        Events.OnNewGameEvent -= OnNewGame;
+    }
+    
+    private void OnTwoLivesLost()
+    {
+        _canvasGroup.alpha = 0;
+    }
+   
+    private void OnNewGame()
+    {
+        _canvasGroup.alpha = 1;
     }
 }

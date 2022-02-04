@@ -19,9 +19,25 @@ public class GameManager : MonoBehaviour
 
     private void Update() 
     {
-        if(this.lives <= 0 && Input.anyKeyDown) {
-            NewGame();
+        if(this.lives == 2 ) {
+            Events.OnOneLiveLostEvent?.Invoke();
         }
+
+        if(this.lives == 1 ) {
+            Events.OnTwoLivesLostEvent?.Invoke();
+        }
+
+        if(this.lives == 0 ) {
+            Events.OnThreeLivesLostEvent?.Invoke();
+            Events.OnGameOverEvent?.Invoke();
+        }
+
+        if (lives <= 0 && Input.GetKeyDown(KeyCode.Space)) 
+        {
+            NewGame();
+            Events.OnNewGameEvent?.Invoke();
+        }
+
     }
 
     private void NewGame()

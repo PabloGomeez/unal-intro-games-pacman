@@ -1,30 +1,30 @@
 using UnityEngine;
 
-public class ThreeLives : MonoBehaviour
+public class UIGameOver : MonoBehaviour
 {
     private CanvasGroup _canvasGroup;
     
     void Start()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
-        _canvasGroup.alpha = 1;
+        _canvasGroup.alpha = 0;
 
-        Events.OnThreeLivesLostEvent += OnThreeLivesLost;
         Events.OnNewGameEvent += OnNewGame;
+        Events.OnGameOverEvent += OnGameOver;
     }
 
     private void OnDestroy()
     {
-        Events.OnThreeLivesLostEvent -= OnThreeLivesLost;
         Events.OnNewGameEvent -= OnNewGame;
+        Events.OnGameOverEvent -= OnGameOver;
     }
     
-    private void OnThreeLivesLost()
+    private void OnNewGame()
     {
         _canvasGroup.alpha = 0;
     }
    
-    private void OnNewGame()
+    private void OnGameOver()
     {
         _canvasGroup.alpha = 1;
     }

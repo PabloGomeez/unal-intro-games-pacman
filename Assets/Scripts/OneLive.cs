@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OneLive : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private CanvasGroup _canvasGroup;
+    
     void Start()
     {
-        
+        _canvasGroup = GetComponent<CanvasGroup>();
+        _canvasGroup.alpha = 1;
+
+        Events.OnOneLiveLostEvent += OnOneLiveLost;
+        Events.OnNewGameEvent += OnNewGame;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        Events.OnOneLiveLostEvent -= OnOneLiveLost;
+        Events.OnNewGameEvent -= OnNewGame;
+    }
+    
+    private void OnOneLiveLost()
+    {
+        _canvasGroup.alpha = 0;
+    }
+   
+    private void OnNewGame()
+    {
+        _canvasGroup.alpha = 1;
     }
 }
